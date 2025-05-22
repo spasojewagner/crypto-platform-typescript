@@ -1,6 +1,6 @@
 import  { useEffect, useState } from 'react';
 import axios from 'axios';
-import animatedlogo from '../assets/images/logo3.gif';
+import animatedlogo from '../assets/images/logoapp.gif';
 // import { useNavigate } from 'react-router-dom';
 import ServicesSection from './ServicesSection';
 import NewsSection from './news/NewsSection ';
@@ -57,7 +57,7 @@ export default function CryptoDashboard() {
       <div className=" p-8 flex">
         {/* Welcome секција */}
         <div className="flex items-center flex-col justify-center-safe">
-          <img src={animatedlogo} alt="Logo" className="w-[500px] " />
+          <img src={animatedlogo} alt="Logo" className="w-[480px] " />
           <div className="text-white flex flex-col gap-2">
             <h1 className="text-4xl md:text-5xl font-light">
               Send <span className="font-semibold">Crypto</span>
@@ -69,7 +69,7 @@ export default function CryptoDashboard() {
               Explore the crypto world.
             </p>
             <p className="text-sm text-gray-300 font-semibold">
-              Buy and sell cryptocurrencies easily on Crypto Serbia.
+              Buy and sell cryptocurrencies easily on Raven.
             </p>
             <button className=" max-w-2xs bg-blue-600 text-white font-medium text-lg rounded-md hover:bg-blue-700 transition duration-300 mt-5 p-3 w-45">
               Send Now

@@ -11,18 +11,18 @@ const Footer: React.FC = () => {
         <div>
           <div className="flex items-center mb-4">
             {/* <img src={Logo} alt="Logo" className="h-8 w-auto" /> */}
-            <span className="ml-2 text-xl font-semibold text-yellow-500">LWEX</span>
+            <span className="ml-2 text-xl font-semibold text-yellow-500">RAVEN</span>
           </div>
-          <p className="text-sm">© {currentYear} LWEX Exchange. All rights reserved.</p>
+          <p className="text-sm">© {currentYear} Raven. All rights reserved.</p>
           <a href="mailto:support-lwex@proton.me" className="mt-2 block text-sm text-blue-400 hover:underline">
-            support-lwex@proton.me
+            raven-support@gmail.com
           </a>
-          <select className="mt-4 bg-gray-800 text-gray-300 px-3 py-1 rounded">
+          {/* <select className="mt-4 bg-gray-800 text-gray-300 px-3 py-1 rounded">
             <option>English</option>
             <option>Русский</option>
             <option>中文</option>
             {/* Add more languages here */}
-          </select>
+          {/* </select> */} 
         </div>
 
         {/* About Us */}

@@ -7,15 +7,17 @@ import { RiLoader3Fill } from "react-icons/ri";
 const Login: FC = () => {
   const [formData, setFormData] = useState({
     email: "",
-    password: ""
+    password: "",
+    rememberMe: false
   });
-  
+
   const { login, isLoggingIn } = useAuthStore();
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    setFormData({ ...formData, [e.target.name]: value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -31,45 +33,68 @@ const Login: FC = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        {/* Email polje */}
-        <div>
-          <label className="block text-gray-50 mt-3 mb-2 text-sm font-medium">
-            Email
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Email Field */}
+        <div className="relative">
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="john@example.com"
+            className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent placeholder-transparent focus:outline-none focus:border-green-500"
+            required
+            id="email"
+          />
+          <label
+            htmlFor="email"
+            className="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-green-500 peer-focus:text-sm"
+          >
+            Email address
           </label>
-          <div className="flex items-center rounded-lg p-5 px-4 bg-[#1f1f1f]">
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Enter your email"
-              className="bg-transparent flex-1 text-white focus:outline-none"
-              required
-            />
-          </div>
         </div>
-        {/* Password polje */}
-        <div>
-          <label className="block text-gray-50 mb-2 mt-3 text-sm font-medium">
+
+        {/* Password Field */}
+        <div className="relative">
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="Password"
+            className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent placeholder-transparent focus:outline-none focus:border-green-500"
+            required
+            id="password"
+          />
+          <label
+            htmlFor="password"
+            className="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-green-500 peer-focus:text-sm"
+          >
             Password
           </label>
-          <div className="flex items-center rounded-lg p-5 px-4 bg-[#1f1f1f]">
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              placeholder="Enter password"
-              className="bg-transparent flex-1 text-white focus:outline-none"
-              required
-            />
-          </div>
         </div>
-        {/* Dugme za login */}
+
+        {/* Remember Me and Forgot Password */}
+        <div className="flex items-center justify-between">
+          <label className="flex items-center text-sm text-gray-200">
+            <input
+              type="checkbox"
+              name="rememberMe"
+              checked={formData.rememberMe}
+              onChange={handleChange}
+              className="form-checkbox h-4 w-4 text-green-600 bg-gray-800 border-gray-300 rounded"
+            />
+            <span className="ml-2">Remember me</span>
+          </label>
+          <a className="text-sm text-green-300 hover:underline" href="#">
+            Forgot your password?
+          </a>
+        </div>
+
+        {/* Submit Button */}
         <button
           type="submit"
-          className="w-full mt-6 py-3 text-lg bg-yellow-600 text-black font-bold hover:bg-amber-400"
+          className="w-full py-2 px-4 bg-green-600 hover:bg-green-700 rounded-md shadow-lg text-white font-semibold transition duration-200"
           disabled={isLoggingIn}
         >
           {isLoggingIn ? (

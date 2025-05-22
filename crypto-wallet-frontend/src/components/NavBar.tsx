@@ -58,7 +58,7 @@ export default function NavBar() {
           </>
         ) : (
           <div
-            className="flex items-center gap-2 px-4 py-2 rounded-2xl cursor-pointer bg-gradient-to-tr from-[#0f0c29] via-[#302b63] to-[#24243e] transition-all hover:scale-105 hover:shadow-md"
+            className="flex items-center gap-2 px-4  rounded-2xl cursor-pointer bg-gradient-to-tr from-[#0f0c29] via-[#302b63] to-[#24243e] transition-all hover:scale-105 hover:shadow-md"
             onClick={() => navigate("/auth")}
           >
             <FaUserCircle className="text-white text-xl" />

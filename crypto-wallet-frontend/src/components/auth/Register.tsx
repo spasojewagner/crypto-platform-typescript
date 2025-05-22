@@ -90,106 +90,127 @@ const Register: FC<RegisterProps> = ({ setRegister }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        {/* Polje za ime */}
-        <div>
-          <label className='block text-gray-50 mt-3 mb-2 text-sm font-medium'>Full Name</label>
-          <div className='flex items-center rounded-lg px-4 bg-[#1f1f1f]'>
-            <input
-              type="text"
-              name='fullName'
-              value={formData.fullName}
-              onChange={handleChange}
-              placeholder='Enter your full name'
-              className='bg-transparent flex-1 text-white focus:outline-none py-4'
-              required
-            />
-          </div>
-        </div>
-        {/* Email polje */}
-        <div>
-          <label className='block text-gray-50 mt-3 mb-2 text-sm font-medium'>E-mail</label>
-          <div className='flex items-center rounded-lg px-4 bg-[#1f1f1f]'>
-            <input
-              type="email"
-              name='email'
-              value={formData.email}
-              onChange={handleChange}
-              placeholder='Please enter your email'
-              className='bg-transparent flex-1 text-white focus:outline-none py-4'
-              required
-            />
-          </div>
-        </div>
-
-        {/* Password polje */}
-        <div>
-          <label className='block text-gray-50 mb-2 mt-3 text-sm font-medium'>Password</label>
-          <div className='flex items-center rounded-lg px-4 bg-[#1f1f1f]'>
-            <input
-              type="password"
-              name='password'
-              value={formData.password}
-              onChange={handleChange}
-              placeholder='Please enter password'
-              className='bg-transparent flex-1 text-white focus:outline-none py-4'
-              required
-            />
-          </div>
-        </div>
-
-        {/* Confirm Password polje */}
-        <div>
-          <label className='block text-gray-50 mb-2 mt-3 text-sm font-medium'>Confirm Password</label>
-          <div className='flex items-center rounded-lg px-4 bg-[#1f1f1f]'>
-            <input
-              type="password"
-              name='confirmPassword'
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              placeholder='Please enter password'
-              className='bg-transparent flex-1 text-white focus:outline-none py-4'
-              required
-            />
-          </div>
-        </div>
-
-        {/* Invitation code polje */}
-        <div>
-          <label className='block text-gray-50 mt-3 mb-2 text-sm font-medium'>Invitation code</label>
-          <div className='flex items-center rounded-lg px-4 bg-[#1f1f1f]'>
-            <input
-              type="text"
-              name='invitation'
-              value={formData.invitation}
-              onChange={handleChange}
-              placeholder='Invitation code'
-              className='bg-transparent flex-1 text-white focus:outline-none py-4'
-            />
-          </div>
-        </div>
-
-
-
-        {/* Terms of Service */}
-        <div className='mt-4 flex items-center'>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Full Name Field */}
+        <div className="relative">
           <input
-            type="checkbox"
-            name="terms"
-            checked={formData.terms}
+            type="text"
+            name='fullName'
+            value={formData.fullName}
             onChange={handleChange}
-            id="terms"
-            className='mr-2'
+            placeholder="John Doe"
+            className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent placeholder-transparent focus:outline-none focus:border-green-500"
             required
+            id="fullName"
           />
-          <label htmlFor="terms" className='text-gray-200 text-sm'>
-            I have read and agree <a href="#" className='text-yellow-400'>Terms of Service</a>
+          <label
+            htmlFor="fullName"
+            className="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-green-500 peer-focus:text-sm"
+          >
+            Full Name
           </label>
         </div>
 
+        {/* Email Field */}
+        <div className="relative">
+          <input
+            type="email"
+            name='email'
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="john@example.com"
+            className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent placeholder-transparent focus:outline-none focus:border-green-500"
+            required
+            id="email"
+          />
+          <label
+            htmlFor="email"
+            className="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-green-500 peer-focus:text-sm"
+          >
+            Email address
+          </label>
+        </div>
+
+        {/* Password Field */}
+        <div className="relative">
+          <input
+            type="password"
+            name='password'
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="Password"
+            className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent placeholder-transparent focus:outline-none focus:border-green-500"
+            required
+            id="password"
+          />
+          <label
+            htmlFor="password"
+            className="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-green-500 peer-focus:text-sm"
+          >
+            Password
+          </label>
+        </div>
+
+        {/* Confirm Password Field */}
+        <div className="relative">
+          <input
+            type="password"
+            name='confirmPassword'
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            placeholder="Confirm Password"
+            className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent placeholder-transparent focus:outline-none focus:border-green-500"
+            required
+            id="confirmPassword"
+          />
+          <label
+            htmlFor="confirmPassword"
+            className="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-green-500 peer-focus:text-sm"
+          >
+            Confirm Password
+          </label>
+        </div>
+
+        {/* Invitation Code Field */}
+        <div className="relative">
+          <input
+            type="text"
+            name='invitation'
+            value={formData.invitation}
+            onChange={handleChange}
+            placeholder="Invitation code"
+            className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent placeholder-transparent focus:outline-none focus:border-green-500"
+            id="invitation"
+          />
+          <label
+            htmlFor="invitation"
+            className="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-green-500 peer-focus:text-sm"
+          >
+            Invitation code (optional)
+          </label>
+        </div>
+
+        {/* Terms of Service */}
+        <div className='flex items-center justify-between'>
+          <label className="flex items-center text-sm text-gray-200">
+            <input
+              type="checkbox"
+              name="terms"
+              checked={formData.terms}
+              onChange={handleChange}
+              className="form-checkbox h-4 w-4 text-green-600 bg-gray-800 border-gray-300 rounded"
+              required
+            />
+            <span className="ml-2">
+              I agree to the <a href="#" className='text-green-400 hover:underline'>Terms of Service</a>
+            </span>
+          </label>
+        </div>
+
+        {/* Submit Button */}
         <button
           type="submit"
-          className="w-full mt-6 py-3 text-lg bg-yellow-400 text-black font-bold hover:bg-yellow-300 cursor-pointer"
+          className="w-full py-2 px-4 bg-green-600 hover:bg-green-700 rounded-md shadow-lg text-white font-semibold transition duration-200"
           disabled={isSigningUp}
         >
           {isSigningUp ? (
