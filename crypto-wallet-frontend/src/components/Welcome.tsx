@@ -5,6 +5,7 @@ import animatedlogo from '../assets/images/logoapp.gif';
 import ServicesSection from './ServicesSection';
 import NewsSection from './news/NewsSection ';
 import PlatformIntroduction from './PlatformIntroduction ';
+import PlatformFeatures from './teams-and-services/PlatformFeatures';
 
 // Типска дефиниција за једну кованицу
 interface Coin {
@@ -132,6 +133,7 @@ export default function CryptoDashboard() {
         <ServicesSection/>
         <NewsSection/>
         <PlatformIntroduction/>
+        <PlatformFeatures/>
       </div>
     </div>
   );

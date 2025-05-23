@@ -8,6 +8,7 @@ import { Profile } from './components/Profile';
 import TradeApp from './components/trade2/TradeApp';
 import Auth from './components/Auth';
 import { useAuthStore } from './store/useAuthStore';
+import TeamsAndServices from './components/teams-and-services/TeamsAndServices';
 
 // Full-screen Loader component
 const Loader: React.FC = () => (
@@ -141,6 +142,14 @@ function App() {
               <ProtectedRoute>
                 <TradeApp />
               </ProtectedRoute>
+            }
+          />
+           <Route
+            path="/agreement"
+            element={
+              
+                <TeamsAndServices/>
+             
             }
           />
 

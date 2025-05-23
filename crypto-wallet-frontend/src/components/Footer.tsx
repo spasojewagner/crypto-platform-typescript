@@ -1,8 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 // import Logo from '../assets/logo.svg'; // Update the path as needed
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+
+  const navigate= useNavigate()
+
+
 
   return (
     <footer className="bg-gray-900 text-gray-300 py-12">
@@ -30,7 +35,7 @@ const Footer: React.FC = () => {
           <h3 className="text-lg font-medium text-white mb-4">About Us</h3>
           <ul className="space-y-2 text-sm">
             <li><a href="#" className="hover:underline">Announcement Center</a></li>
-            <li><a href="#" className="hover:underline">Online Customer Service</a></li>
+            <li onClick={()=>navigate("/agreement")}><a href="#" className="hover:underline">Teams and Services</a></li>
           </ul>
         </div>
 
