@@ -9,6 +9,10 @@ import TradeApp from './components/trade2/TradeApp';
 import Auth from './components/Auth';
 import { useAuthStore } from './store/useAuthStore';
 import TeamsAndServices from './components/teams-and-services/TeamsAndServices';
+import HelpCenter from './components/teams-and-services/HelpCenter';
+import PrivacyNotice from './components/teams-and-services/PrivacyNotice';
+import ServiceAgreement from './components/teams-and-services/ServiceAgreement';
+import AnnouncementCenter from './components/teams-and-services/AnnouncementCenter';
 
 // Full-screen Loader component
 const Loader: React.FC = () => (
@@ -144,15 +148,36 @@ function App() {
               </ProtectedRoute>
             }
           />
-           <Route
-            path="/agreement"
+          <Route
+            path="/teams-services"
             element={
-              
-                <TeamsAndServices/>
-             
+              <TeamsAndServices />
             }
           />
-
+          <Route
+            path="/help-center"
+            element={
+              <HelpCenter/>
+            }
+          />
+            <Route
+            path="/pravicy-notice"
+            element={
+              <PrivacyNotice/>
+            }
+          />
+            <Route
+              path="/agreement"
+            element={
+              <ServiceAgreement/>
+            }
+          />
+              <Route
+              path="/announcement"
+            element={
+              <AnnouncementCenter/>
+            }
+          />
           {/* Catch all other routes and redirect to home */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

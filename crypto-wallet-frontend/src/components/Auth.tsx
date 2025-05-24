@@ -1,5 +1,5 @@
 /* src/pages/Auth.tsx */
-import React, { useState, FC, useEffect } from 'react';
+import  { useState, FC, useEffect } from 'react';
 import Register from '../components/auth/Register';
 import Login from '../components/auth/Login';
 import { useAuthStore } from '../store/useAuthStore';
@@ -8,7 +8,7 @@ import img1 from '../assets/images/pozadina1.png'
 
 const Auth: FC = () => {
   const [isRegister, setRegister] = useState(false);
-  const { authUser, checkAuth } = useAuthStore();
+  const { authUser, } = useAuthStore();
   const navigate = useNavigate();
 
   useEffect(() => {

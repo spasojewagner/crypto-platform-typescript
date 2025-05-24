@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useAuthStore } from '../store/useAuthStore';
+import { useAuthStore } from '../../store/useAuthStore';
 import { Mail, Shield, CheckCircle, AlertCircle, Clock, RefreshCw } from 'lucide-react';
 
 export const EmailVerification: React.FC = () => {
