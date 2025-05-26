@@ -13,6 +13,7 @@ import HelpCenter from './components/teams-and-services/HelpCenter';
 import PrivacyNotice from './components/teams-and-services/PrivacyNotice';
 import ServiceAgreement from './components/teams-and-services/ServiceAgreement';
 import AnnouncementCenter from './components/teams-and-services/AnnouncementCenter';
+import ChatBot from './components/chatbot/ChatBot';
 
 // Full-screen Loader component
 const Loader: React.FC = () => (
@@ -176,6 +177,15 @@ function App() {
               path="/announcement"
             element={
               <AnnouncementCenter/>
+            }
+
+          />
+             <Route
+            path="/markets/chat-bot"
+            element={
+              <ProtectedRoute>
+                <ChatBot/>
+              </ProtectedRoute>
             }
           />
           {/* Catch all other routes and redirect to home */}

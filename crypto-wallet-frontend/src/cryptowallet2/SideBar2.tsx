@@ -47,7 +47,7 @@ const Sidebar2: React.FC = () => {
           </li>
           <li
             className="flex items-center space-x-3 hover:text-green-400 cursor-pointer"
-            onClick={() => navigate('/markets/messages')}
+            onClick={() => navigate('/markets/chat-bot')}
           >
             <FaEnvelope />
             <span>Messages</span>
